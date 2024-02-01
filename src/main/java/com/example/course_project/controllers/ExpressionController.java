@@ -29,19 +29,19 @@ public class ExpressionController {
                 result  = Double.parseDouble(numbers[0])+ Double.parseDouble(numbers[1]);
             }
             if(ch == '-'){
-                String[] numbers = string.split("/-");
+                String[] numbers = string.split("\\-");
                 result  = Double.parseDouble(numbers[0]) - Double.parseDouble(numbers[1]);
             }
             if(ch == '*'){
-                String[] numbers = string.split("/*");
+                String[] numbers = string.split("\\*");
                 result  = Double.parseDouble(numbers[0]) * Double.parseDouble(numbers[1]);
             }
             if(ch == '/'){
-                String[] numbers = string.split("//");
+                String[] numbers = string.split("\\/");
                 result  = Double.parseDouble(numbers[0]) / Double.parseDouble(numbers[1]);
             }
             if(ch == '%'){
-                String[] numbers = string.split("/%");
+                String[] numbers = string.split("\\%");
                 result  = Double.parseDouble(numbers[0]) % Double.parseDouble(numbers[1]);
             }
         }
