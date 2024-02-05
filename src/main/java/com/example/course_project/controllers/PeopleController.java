@@ -2,9 +2,11 @@ package com.example.course_project.controllers;
 
 import com.example.course_project.dao.PersonDAO;
 import com.example.course_project.models.Person;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -40,8 +42,11 @@ public class PeopleController {
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("person") Person person) {
+    public String create(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult) {
         personDAO.save(person);
+        if(bindingResult.hasErrors())
+                return "people/new";
+
         return "redirect:/people";
     }
 

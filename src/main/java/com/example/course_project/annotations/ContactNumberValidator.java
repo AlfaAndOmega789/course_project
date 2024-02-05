@@ -14,7 +14,6 @@ public class ContactNumberValidator implements ConstraintValidator<ContactNumber
     public void initialize(ContactNumberConstraint constraintAnnotation) {
 
     }
-
     @Override
     public boolean isValid(String contactField, ConstraintValidatorContext cxt) {
         return contactField != null && contactField.matches("[0-9]+") &&

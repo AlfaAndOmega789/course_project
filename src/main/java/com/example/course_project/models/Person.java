@@ -28,14 +28,9 @@ public class Person {
         this.email = email;
         this.phonesNumber = phonesNumber;
     }
-
-
-
-
     public Person() {
 
     }
-
     public Person(int id, String name, int age, String email) {
         this.id = id;
         this.name = name;
