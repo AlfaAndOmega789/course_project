@@ -1,14 +1,22 @@
 package com.example.course_project.models;
 
 import com.example.course_project.annotations.ContactNumberConstraint;
+import jakarta.persistence.*;
 
 /**
  * @author Neil Alishev
  */
+@Entity
 public class Person {
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column
     private String name;
+    @Column
     private int age;
+    @Column
     private String email;
     @ContactNumberConstraint
     private String phonesNumber;
